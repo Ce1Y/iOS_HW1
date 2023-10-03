@@ -14,7 +14,7 @@ struct ContentView: View {
                 .ignoresSafeArea()
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 .frame(height: 100)
-            
+            // 畫面上方的搜尋欄
             ZStack(alignment: .leading) {
                 Rectangle()
                     .fill(Color.gray)
@@ -38,7 +38,8 @@ struct ContentView: View {
             .offset(y: -10)
             Spacer()
                 .frame(height: 5)
-            
+
+            // 搜尋欄下方的主題列
             HStack(alignment: .center) {
                 Spacer()
                 Text("推薦")
@@ -58,10 +59,12 @@ struct ContentView: View {
             
             UserView(typeIcon: "apple", typeName: "Apple ·２天", title: "#iPhone i15系列真的爛爆，為什麼可以賣這麼好？", content: "i15pro/pro max 完全走三星回頭路，回想三星S21、S2...", like: "226", comment: "306")
             Group {
+                // 每個卡片之間的灰色間隔
                 Rectangle()
                     .fill(Color.gray)
                     .frame(height: 5)
                     .opacity(0.2)
+                // 一個文章卡片
                 UserView(typeIcon: "message-square", typeName: "閒聊 ·１天", title: "當一年兵好處很多啊!", content: "男生跟女生（尤其是94年次男生）請進", like: "106", comment: "78")
                 Rectangle()
                     .fill(Color.gray)
@@ -80,7 +83,8 @@ struct ContentView: View {
                 Spacer()
                 ZStack {
                     UserView(typeIcon: "makeup", typeName: "美妝 ·４天", title: "有人聽過或聽過皙之密嗎", content: "因為圖片沒顯示出來我就隨便打了", like: "999", comment: "999")
-                
+
+                    // 最下方的工具列
                     HStack {
                         Spacer()
                         Group {
@@ -136,6 +140,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+// 一個主題的卡片模板
 struct UserView: View {
     let typeIcon: String
     let typeName: String
